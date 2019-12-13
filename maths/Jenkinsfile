@@ -76,5 +76,33 @@ pipeline {
                 )
             }
         }
+
+        stage ('Upload Distrib'){
+            steps {
+                rtUpload (
+                    serverId: 'ARTIFACTORY_SERVER',
+                    spec: '''{
+                          "files": [
+                            {
+                              "pattern": "maths/target/*.zip",
+                              "target": "libs-release-local/com/dineshvelhal/javaprojects/"
+                            },
+                            {
+                              "pattern": "maths/pom.xml",
+                              "target": "libs-release-local/com/dineshvelhal/javaprojects/"
+                            }
+                         ]
+                    }''',
+                    failNoOp: true
+
+                    // Optional - Associate the uploaded files with the following custom build name and build number,
+                    // as build artifacts.
+                    // If not set, the files will be associated with the default build name and build number (i.e the
+                    // the Jenkins job name and number).
+                    //buildName: 'calculator-app',
+                    //buildNumber: '1'
+                   )
+            }
+        }
     }
 }
