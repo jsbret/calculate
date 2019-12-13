@@ -85,11 +85,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "maths/target/*.zip",
-                              "target": "libs-release-local/com/dineshvelhal/javaprojects/"
-                            },
-                            {
-                              "pattern": "maths/pom.xml",
-                              "target": "libs-release-local/com/dineshvelhal/javaprojects/"
+                              "target": "libs-release-local/com/dineshvelhal/javaprojects/maths/1.1/"
                             }
                          ]
                     }''',

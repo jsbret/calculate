@@ -7,8 +7,9 @@
     </formats>
     <fileSets>
         <fileSet>
+            <directory>target/appassembler/</directory>
             <includes>
-                <include>target/appassembler/*</include>
+                <include>*</include>
             </includes>
         </fileSet>
     </fileSets>
